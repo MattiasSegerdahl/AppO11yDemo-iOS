@@ -34,7 +34,9 @@ struct BrewingCoffee: View {
                 Text(viewModel.brewingStatusText).padding()
                 Spacer()
             }
+            #if os(iOS)
             .navigationBarTitleDisplayMode(.inline)
+            #endif
             .navigationTitle("Brewing a \(coffee.title)")
             .onDisappear {
                 viewModel.stopBrewing()
